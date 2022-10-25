@@ -11,18 +11,48 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
-    <title>Vanilla Weather</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="src/style.css"/>
+ 
+    <title>Vanilla Weather World</title>
 </head>
 <body>
     <div class="container">
+        <div class="weather-app-wrapper">
         <div class="weather-app">
-    <h1>New York</h1>
+        <form id="search-form" class="mb-3">
+            <div class="row">
+          <div class="col-7">
+            <input 
+                type="search" 
+                placeholder= "Type a city..." 
+                class = "form-control" autofocus="on"
+                id="city-search"/>
+          </div>
+                <div class="col-2">
+         <input 
+         type="submit"
+         value="Search"
+         class= "btn btn-outline-Dark"/>
+           </div>
+           <div class="col-2 ">
+            <input type="submit"
+            value= "My Location"
+            class= "btn btn-outline-info"
+            id="my-location"/>
+           </div>
+        </div> 
+    
+</form>
+    <div class="overview">
+        <div class="weather-app">
+    <h1 id="cityDisplay"></h1>
     <ul>
         <li>
-            Friday 05:00
+            Last Updated: <span id="date"></span>
         </li>
-        <li>
-            Clear
+        <li id="conditions">
+            
         </li>
     </ul>
     <div class="row">
@@ -30,7 +60,7 @@
 <div class="d-flex weather-temperature">
   <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Sunny Skies" id="icon" />
   <div>
-    <strong id="temperature">12</strong><span class="units">°C | <a href="#">°F</a></span>
+    <strong id="temperature"></strong><span class="units"><a href="#" id="celsius-link">°C</a> | <a href="#" id="fahrenheit-link">°F</a></span>
   </div>
 </div>
 
@@ -38,17 +68,18 @@
             <div class="col-6">
                 <ul>
                     <li>
-                        Percipitation 12%
+                       Feels Like: <span id="feelsLike"></span>
                     </li>
-                    <li>
-                        Humidity 74%
+                    <li> 
+                        Humidity: <span id="humidity"></span>
                     </li>
-                    <li>
-                        Wind Speed 3mph
+                    <li > 
+                        Wind Speed: <span id="windSpeed"></span>
                     </li>
                 </div>
 
         <div>
-
+            </div>
+<script src="src/app.js"></script>
 </body>
 </html>
