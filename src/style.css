@@ -28,6 +28,9 @@ body{
         padding-top: 3px;
         padding-bottom: 3px;
     }
+    li::first-letter{
+        text-transform: capitalize;
+    }
     
     .weather-app-wrapper{
         max-width: 600px;
