@@ -46,7 +46,7 @@ function displayTemperature(response) {
     humidityElement.innerHTML = Math.round(response.data.temperature.humidity);
     windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.time * 1000);
-
+    }
 
 
 let apiKey= "5cdf0fabb9e3fo934af85f67fb2t19a3"; //for some reason when I add {apiKey} to my url it returns an "Invalid" response
@@ -68,3 +68,18 @@ function search(city){
     
     let form=document.querySelector("#search-form");
     form.addEventListener("submit", handleSubmit);
+   
+    function searchLocation(position) {
+        let apiKey = "5cdf0fabb9e3fo934af85f67fb2t19a3";
+        console.log(position.coords.latitude);
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&key=5cdf0fabb9e3fo934af85f67fb2t19a3&units=metric`;
+        axios.get(apiUrl).then(displayTemperature);
+      }
+      function getCurrentLocation(event) {
+        event.preventDefault();
+        navigator.geolocation.getCurrentPosition(searchLocation);
+      }
+      
+      let myLocationButton = document.querySelector("#my-location");
+      myLocationButton.addEventListener("click", getCurrentLocation);
+
