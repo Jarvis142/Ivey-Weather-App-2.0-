@@ -20,29 +20,32 @@ function formatDate(timestamp){
 }
 
 
-function displayTemperature(response){
-    console.log(response.data);
+function displayTemperature(response) {
     event.preventDefault();
-    let cityName=document.querySelector("#cityDisplay");
-    cityName.innerHTML=response.data.city;
-    let temperatureElement= document.querySelector("#temperature");
-    temperatureElement.innerHTML= Math.round(response.data.temperature.current);
-    let currentConditions=document.querySelector("#conditions");
-    currentConditions.innerHTML= response.data.condition.description;
-    let weatherIcon=document.querySelector("#icon");
-    weatherIcon.innerHTML= response.data.condition.icon_url;
-    let feelsLike= document.querySelector("#feelsLike");
-    feelsLike.innerHTML= Math.round(response.data.temperature.feels_like);
-    let humidityElement= document.querySelector("#humidity");
-    humidityElement.innerHTML= Math.round(response.data.temperature.humidity);
-    let windSpeedElement=document.querySelector("#windSpeed");
-    windSpeedElement.innerHTML=Math.round(response.data.wind.speed);
-    let dateElement= document.querySelector("#date");
-    dateElement.innerHTML= formatDate(response.data.time * 1000)
-    let weatherIcon=document.querySelector("#icon");
-    weatherIcon.setAttribute( "src",`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`) ;
-        weatherIcon.setAttribute( "alt",response.data.description) ;
-}
+    let cityName = document.querySelector("#cityDisplay");
+    let temperatureElement = document.querySelector("#temperature");
+    let currentConditions = document.querySelector("#conditions");
+    let weatherIcon = document.querySelector("#icon");
+    
+    celsiusTemperature = Math.round(response.data.temperature.current);
+    
+    let feelsLike = document.querySelector("#feelsLike");
+    let humidityElement = document.querySelector("#humidity");
+    let windSpeedElement = document.querySelector("#windSpeed");
+    let dateElement = document.querySelector("#date");
+  
+    cityName.innerHTML = response.data.city;
+    currentConditions.innerHTML = response.data.condition.description;
+    weatherIcon.setAttribute(
+      "src",
+      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    );
+    weatherIcon.setAttribute("alt", response.data.description);
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
+    feelsLike.innerHTML = Math.round(response.data.temperature.feels_like);
+    humidityElement.innerHTML = Math.round(response.data.temperature.humidity);
+    windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
+    dateElement.innerHTML = formatDate(response.data.time * 1000);
 
 
 
