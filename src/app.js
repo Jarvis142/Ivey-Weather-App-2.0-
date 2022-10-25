@@ -1,3 +1,25 @@
+function formatDate(timestamp){
+    let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+    let date= new Date(timestamp);
+    let hour= date.getHours();
+    let minutes = date.getMinutes();
+    let day= days[date.getDay()];
+       if (hour < 10) {
+  hour = `0${hour}`};
+  if (minutes < 10) {
+  minutes = `0${minutes}`}
+    return `${day} ${hour}:${minutes}`
+}
+
+
 function displayTemperature(response){
     console.log(response.data);
     event.preventDefault();
@@ -15,7 +37,12 @@ function displayTemperature(response){
     humidityElement.innerHTML= Math.round(response.data.temperature.humidity);
     let windSpeedElement=document.querySelector("#windSpeed");
     windSpeedElement.innerHTML=Math.round(response.data.wind.speed);
+    let dateElement= document.querySelector("#date");
+    dateElement.innerHTML= formatDate(response.data.time * 1000)
 }
+
+
+
 let apiKey= "5cdf0fabb9e3fo934af85f67fb2t19a3"; //for some reason when I add {apiKey} to my url it returns an "Invalid" response
 let city= "Seattle";
 let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=5cdf0fabb9e3fo934af85f67fb2t19a3&units=metric`;
