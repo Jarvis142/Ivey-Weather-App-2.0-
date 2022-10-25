@@ -1,0 +1,38 @@
+body{
+    font-family: arial,sans-serif;
+    }
+    
+    .weather-app{
+        max-width:640px;
+        margin:40px auto;
+        padding:10px;
+        border:1px solid;
+        border-color:black;
+        border-radius: 9px;
+       
+    }
+    
+    h1{
+        display:block;
+        text-align:left;
+        color: gray;
+        font-size: 35px;
+        line-height: 50px;
+        font-weight: 400;
+        margin-bottom:0;
+    
+    }
+    
+    ul{
+        margin:0 ;
+        padding:0;
+    }
+    
+    li{
+        list-style:none;
+        color: #9aa0a6;
+       font-size: 18px;
+        line-height: 16px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
