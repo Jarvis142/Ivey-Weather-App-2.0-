@@ -108,7 +108,8 @@ function search(city){
         search(citySearch.value);
     }
     search("Washington D.C.");
-    
+  
+
     let form=document.querySelector("#search-form");
     form.addEventListener("submit", handleSubmit);
    
@@ -146,3 +147,4 @@ function search(city){
       let celsiusLink = document.querySelector("#celsius-link");;
       celsiusLink.addEventListener("click", convertToCelsius);
 
+      displayForecast();
