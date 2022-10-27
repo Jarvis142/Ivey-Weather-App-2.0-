@@ -18,7 +18,50 @@ function formatDate(timestamp){
   minutes = `0${minutes}`}
     return `${day} ${hour}:${minutes}`
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
 
+  let days = [
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+  ];
+
+  let forecastHTML = `<div>`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="week">
+<div class="card">
+         <div class="card-body">
+           <div class="row">
+             <div class="col-3">
+ <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" height="35" class="imgIcon" id="icon" />
+           </div>
+            
+            <div class="col-5 weather-forecast-date">${day}</div>
+             <div class="col-2 farenheight">
+               95°F
+             </div>
+             <div class="col-2 celcius">
+               35°C
+             </div>
+           </div>
+         </div>
+         </div>
+         
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
 
 function displayTemperature(response) {
     event.preventDefault();
