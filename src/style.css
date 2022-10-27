@@ -7,8 +7,8 @@ body{
     h1{
         display:block;
         text-align:left;
-        color: gray;
-        font-size: 35px;
+        color: 000;
+        font-size: 45px;
         line-height: 50px;
         font-weight: 400;
         margin-bottom:0;
@@ -22,11 +22,11 @@ body{
     
     li{
         list-style:none;
-        color: #9aa0a6;
-       font-size: 18px;
+        color: gray;
+       font-size: 14px;
         line-height: 16px;
         padding-top: 3px;
-        padding-bottom: 3px;
+        padding-bottom: 1px;
     }
     li:first-letter{
         text-transform: capitalize;
@@ -39,7 +39,7 @@ body{
     
     .weather-app{
         max-width:640px;
-        margin:10px auto;
+        margin:40px auto;
         padding:10px;
         border:1px solid;
         border-color:black;
@@ -51,23 +51,39 @@ body{
     }
     
     .weather-temperature img{
-        margin-right:5px;
-        height:70px;
-        width:70px;
+        position: relative;
+        left:140px;
+        height:90px;
+        width: 90px;
+        top:10px;
     }
     
     .weather-temperature strong{
-        font-size:54px;
-        line-height:1.2;
+        position: relative;
+        left: 150px;
+        font-size: 64px;
+        line-height: 2;
     }
     
     .weather-temperature .units{
         position: relative;
-        font-size:16px;
-        top:-25px;
+        left:155px;
+        font-size: 16px;
+        top: -32px;
     }
     .targetLinks{
         text-align: center;
         font-size: 15px;
        line-height: 1;
     }
+
+    .card{
+        height: 50px;
+        border: none;
+        width: 90%;
+    text-align: center;}
+    .week .imgIcon{
+        position: relative;
+        bottom:10px;}
+    
+    
