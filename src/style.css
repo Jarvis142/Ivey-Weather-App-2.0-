@@ -78,7 +78,7 @@ color: #000;
     
     .weather-temperature img{
         position: relative;
-        left:140px;
+        left:160px;
         height:90px;
         width: 90px;
         top:10px;
@@ -86,14 +86,14 @@ color: #000;
     
     .weather-temperature strong{
         position: relative;
-        left: 150px;
+        left: 165px;
         font-size: 64px;
         line-height: 2;
     }
     
     .weather-temperature .units{
         position: relative;
-        left:155px;
+        left:170px;
         font-size: 16px;
         top: -32px;
     }
