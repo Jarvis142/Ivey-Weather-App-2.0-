@@ -18,18 +18,19 @@ function formatDate(timestamp){
   minutes = `0${minutes}`}
     return `${day} ${hour}:${minutes}`
 }
-function displayForecast() {
+function displayForecast(response) {
+ console.log(response);
   let forecastElement = document.querySelector("#forecast");
 
-  let days = [
-    "Thursday",
-    "Friday",
+  let days=[
     "Saturday",
     "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
-  ];
+    "Thursday",
+    "Friday"
+  ]
 
   let forecastHTML = `<div>`;
   days.forEach(function (day) {
@@ -57,11 +58,12 @@ function displayForecast() {
          
 `;
   });
-
+ 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
+
 
 function displayTemperature(response) {
     event.preventDefault();
@@ -93,7 +95,7 @@ function displayTemperature(response) {
 
 
 let apiKey= "5cdf0fabb9e3fo934af85f67fb2t19a3"; //for some reason when I add {apiKey} to my url it returns an "Invalid" response
-let city= "Seattle";
+let city= "";
 let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=5cdf0fabb9e3fo934af85f67fb2t19a3&units=metric`;
 axios.get(apiUrl).then(displayTemperature);
 
