@@ -44,6 +44,14 @@ color: #000;
         text-transform: capitalize;
     }
     
+    h4{
+        font-family: 'Aboreto', cursive;
+        font-size: 17px;  
+        text-align: center; 
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 40px;
+    }
     .weather-app-wrapper{
         max-width: 600px;
         margin:30px auto;

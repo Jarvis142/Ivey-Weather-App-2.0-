@@ -1,4 +1,22 @@
+function applyGreet(){
+  let name= prompt("What is your name?"); 
+  let date = new Date();
+  let hour = date.getHours();
+  if (hour < 12){
+    let h4=document.querySelector("h4");
+    h4.innerHTML= `Good Morning ${name}`;}
+  if( hour > 12 && 16){
+    let h4=document.querySelector("h4");
+    h4.innerHTML= `Good Afternoon ${name}`;}
+    else{
+      let h4=document.querySelector("h4");
+    h4.innerHTML= `Good Evening ${name}`;}
+    }
+
+applyGreet();
+
 function formatDate(timestamp) {
+
   let days = [
     "Sunday",
     "Monday",
@@ -12,6 +30,7 @@ function formatDate(timestamp) {
   let hour = date.getHours();
   let minutes = date.getMinutes();
   let day = days[date.getDay()];
+
   if (hour < 10) {
     hour = `0${hour}`;
   }
@@ -19,7 +38,15 @@ function formatDate(timestamp) {
     minutes = `0${minutes}`;
   }
   return `${day} ${hour}:${minutes}`;
+
+
+
+
 }
+
+
+
+
 
 function formatDay(timestamp) {
   let date= new Date(timestamp * 1000)
@@ -46,7 +73,7 @@ function displayForecast(response) {
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 6){
-      let maxFah= Math.round(forecastDay.temperature.maximum);
+     
     forecastHTML =
       forecastHTML +
       `
