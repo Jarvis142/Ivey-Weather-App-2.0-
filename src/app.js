@@ -144,24 +144,11 @@ function search(city){
       let myLocationButton = document.querySelector("#my-location");
       myLocationButton.addEventListener("click", getCurrentLocation);
 
-      function convertToFahrenheit(event) {
-        event.preventDefault();
-        let temperatureElement = document.querySelector("#temperature");
-        let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-        temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-      }
+     
       
-      function convertToCelsius(event) {
-        event.preventDefault();
-        let temperatureElement = document.querySelector("#temperature");
-        temperatureElement.innerHTML = celsiusTemperature;
-      }
-      let celsiusTemperature = null;
       
-      let fahrenheitLink = document.querySelector("#fahrenheit-link");
-      fahrenheitLink.addEventListener("click", convertToFahrenheit);
+  
       
-      let celsiusLink = document.querySelector("#celsius-link");;
-      celsiusLink.addEventListener("click", convertToCelsius);
+     
 
  

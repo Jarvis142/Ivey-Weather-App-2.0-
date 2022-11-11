@@ -91,7 +91,7 @@ color: #000;
         line-height: 2;
     }
     
-    .weather-temperature .units{
+    .weather-temperature .unit{
         position: relative;
         left:170px;
         font-size: 16px;
