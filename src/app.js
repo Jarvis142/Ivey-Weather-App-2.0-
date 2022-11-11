@@ -8,7 +8,7 @@ function applyGreet(){
   if( hour > 12 && 16){
     let h4=document.querySelector("h4");
     h4.innerHTML= `Good Afternoon ${name}`;}
-    else{
+    if(hour > 16){
       let h4=document.querySelector("h4");
     h4.innerHTML= `Good Evening ${name}`;}
     }
@@ -38,15 +38,7 @@ function formatDate(timestamp) {
     minutes = `0${minutes}`;
   }
   return `${day} ${hour}:${minutes}`;
-
-
-
-
 }
-
-
-
-
 
 function formatDay(timestamp) {
   let date= new Date(timestamp * 1000)
@@ -63,7 +55,7 @@ let days=[
 return days[day];
 }
 function displayForecast(response) {
- console.log(response.data);
+
  let forecast= response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -102,7 +94,7 @@ function displayForecast(response) {
  
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
+
 }
 
 
