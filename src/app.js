@@ -55,10 +55,10 @@ function displayForecast(response) {
 <div class="card">
          <div class="card-body">
            <div class="row">
-             <div class="col-1"> 
+             <div class="col-3"> 
              <img src= "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png" height="45" class="imgIcon" id="icon" />
 </div>
-           <div class="col-4 weather-forecast-date">${formatDay(forecastDay.time)}</div>
+           <div class="col-5 weather-forecast-date">${formatDay(forecastDay.time)}</div>
 
              <div class="col-2 farenheight"> ${Math.round(forecastDay.temperature.maximum )}
                °F
