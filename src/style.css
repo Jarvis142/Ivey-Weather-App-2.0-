@@ -63,9 +63,9 @@ color: #000;
     
     .weather-app{
         max-width:640px;
-        margin:40px auto;
+        margin: 40px auto;
         padding:10px;
-      
+       
         border-radius: 9px;  
         }
     .form-control{
@@ -106,8 +106,11 @@ color: #000;
         top: -32px;
     }
     .targetLinks{
+        font-family: 'Quattrocento Sans', sans-serif;
         text-align: center;
-        font-size: 15px;
+        padding-top: 0;
+        padding-bottom: 15px;;
+        font-size: 17px;
        line-height: 1;
     }
 
