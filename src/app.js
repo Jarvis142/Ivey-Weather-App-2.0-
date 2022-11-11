@@ -60,10 +60,10 @@ function displayForecast(response) {
 </div>
            <div class="col-5 weather-forecast-date">${formatDay(forecastDay.time)}</div>
 
-             <div class="col-2 farenheight"> ${Math.round(forecastDay.temperature.maximum * 9) / 5 + 32}
+             <div class="col-2 farenheight"> ${Math.round(forecastDay.temperature.maximum )}
                °F
              </div>
-             <div class="col-2 celcius">${Math.round(forecastDay.temperature.minimum* 9) / 5 + 32}
+             <div class="col-2 celcius">${Math.round(forecastDay.temperature.minimum)}
                °F
              </div>
            </div>
@@ -86,7 +86,7 @@ function displayTemperature(response) {
     let currentConditions = document.querySelector("#conditions");
     let weatherIcon = document.querySelector("#icon");
     
-    fahrenheitTemperature = Math.round(response.data.temperature.current * 9) /5 + 32;
+    fahrenheitTemperature = Math.round(response.data.temperature.current );
     
     let feelsLike = document.querySelector("#feelsLike");
     let humidityElement = document.querySelector("#humidity");
@@ -111,12 +111,12 @@ getForecast(response.data.coordinates);}
 function getForecast(coordinates){
 let apiKey= "5cdf0fabb9e3fo934af85f67fb2t19a3"; //for some reason when I add {apiKey} to my url it returns an "Invalid" response
 let city= "";
-let apiUrl=`https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=5cdf0fabb9e3fo934af85f67fb2t19a3&units=metric`;
+let apiUrl=`https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=5cdf0fabb9e3fo934af85f67fb2t19a3&units=imperial`;
 axios.get(apiUrl).then(displayForecast);
 }
 function search(city){
     let apiKey= "5cdf0fabb9e3fo934af85f67fb2t19a3"; //for some reason when I add {apiKey} to my url it returns an "Invalid" response
-    let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=5cdf0fabb9e3fo934af85f67fb2t19a3&units=metric`;
+    let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=5cdf0fabb9e3fo934af85f67fb2t19a3&units=imperial`;
     axios.get(apiUrl).then(displayTemperature);
     }
     function handleSubmit(event){
@@ -133,7 +133,7 @@ function search(city){
     function searchLocation(position) {
         let apiKey = "5cdf0fabb9e3fo934af85f67fb2t19a3";
         console.log(position.coords.latitude);
-        let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&key=5cdf0fabb9e3fo934af85f67fb2t19a3&units=metric`;
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&key=5cdf0fabb9e3fo934af85f67fb2t19a3&units=imperial`;
         axios.get(apiUrl).then(displayTemperature);
       }
       function getCurrentLocation(event) {
